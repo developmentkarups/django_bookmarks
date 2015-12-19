@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,6 +51,14 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'django_bookmarks.urls'
+####Bootstrap####
+STATICFILES_DIRS = (
+    # put absolute path here as string not relative path
+    # forward slash to be used even in windows
+    os.path.join(
+        os.path.dirname(__file__), 'static'
+    )
+)
 
 TEMPLATES = [
     {
@@ -69,13 +78,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_bookmarks.wsgi.application'
 
+##Django settings for this project
+ADMINS = (
+    # ('admin', 'karuppaiah.al@gmail.com')
+)
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'microblogging',
+        'NAME': 'django_mytweetsdb',
         'USER': 'root',
         'PASSWORD': 'sa',
         'HOST': 'localhost',
